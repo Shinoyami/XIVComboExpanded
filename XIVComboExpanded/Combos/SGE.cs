@@ -124,6 +124,12 @@ internal class SageDosis : CustomCombo
     {
         if (actionID == SGE.Dosis || actionID == SGE.Dosis2 || actionID == SGE.Dosis3)
         {
+            if (IsEnabled(CustomComboPreset.SageDosisLucidDreaming) &&
+                LocalPlayer?.CurrentMp <= 7000 &&
+                IsCooldownUsable(ADV.LucidDreaming) &&
+                CanUseAction(ADV.LucidDreaming))
+                return ADV.LucidDreaming;
+
             if (IsEnabled(CustomComboPreset.SageDosisPsyche))
             {
                 if (level >= SGE.Levels.Psyche && IsCooldownUsable(SGE.Psyche) && TargetIsEnemy() && InCombat())

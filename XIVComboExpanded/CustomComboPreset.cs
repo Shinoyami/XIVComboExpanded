@@ -2056,6 +2056,12 @@ public enum CustomComboPreset
     [CustomComboInfo("Dosis Psyche Feature", "Replace Dosis with Psyche when cooldown is available.", SGE.JobID)]
     SageDosisPsyche = 4014,
 
+    [IconsCombo([SGE.Dosis, UTL.ArrowLeft, ADV.LucidDreaming, UTL.Blank, ADV.LucidDreaming, UTL.Checkmark])]
+    [SectionCombo("Damage")]
+    [ExpandedCustomCombo]
+    [CustomComboInfo("Dosis into Lucid Dreaming", "Replace Dosis with Lucid Dreaming at 7000 MP or lower when Lucid Dreaming is available.", SGE.JobID)]
+    SageDosisLucidDreaming = 4022,
+
     [IconsCombo([SGE.Dosis, UTL.ArrowLeft, SGE.Phlegma, UTL.Blank, SGE.Phlegma, UTL.Checkmark])]
     [SectionCombo("Damage")]
     [ExpandedCustomCombo]
