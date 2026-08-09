@@ -231,6 +231,14 @@ internal abstract partial class CustomCombo
     protected static bool CanUseAction(uint actionID) => Service.IconReplacer.CanUseAction(actionID);
 
     /// <summary>
+    /// Gets bool determining if an action can be used on a specific target.
+    /// </summary>
+    /// <param name="actionID">Action ID.</param>
+    /// <param name="targetID">Target entity ID.</param>
+    /// <returns>A bool value of whether the action can be used on the target.</returns>
+    protected static bool CanUseAction(uint actionID, uint targetID) => Service.IconReplacer.CanUseAction(actionID, targetID);
+
+    /// <summary>
     /// Find if the player has a certain condition.
     /// </summary>
     /// <param name="flag">Condition flag.</param>
