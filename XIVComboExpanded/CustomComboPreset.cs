@@ -1001,9 +1001,17 @@ public enum CustomComboPreset
 
     [SectionCombo("Buffs")]
     [IconsCombo([GNB.BowShock, UTL.Cycle, GNB.SonicBreak])]
+    [ConflictingCombos(GunbreakerBowShockDangerZoneFeature)]
     [AccessibilityCustomCombo]
     [CustomComboInfo("Sonic Shock Feature", "Replace both Sonic Break and Bow Shock with the former when it is available and you are not on GCD, and the latter when it is not on CD and either Sonic Break is not available or you are on GCD.", GNB.JobID)]
     GunbreakerBowShockSonicBreakFeature = 3704,
+
+    [SectionCombo("Buffs")]
+    [IconsCombo([GNB.BowShock, UTL.ArrowLeft, GNB.DangerZone])]
+    [ConflictingCombos(GunbreakerBowShockSonicBreakFeature)]
+    [AccessibilityCustomCombo]
+    [CustomComboInfo("Bow Shock into Blasting Zone", "Replace Bow Shock with Danger Zone or Blasting Zone when the level-appropriate action is available.", GNB.JobID)]
+    GunbreakerBowShockDangerZoneFeature = 3728,
 
     [IconsCombo([GNB.Continuation, UTL.ArrowLeft, GNB.DangerZone, UTL.Cycle, GNB.SonicBreak, UTL.Cycle, GNB.DoubleDown, GNB.GnashingFang, GNB.BurstStrike, UTL.Cycle, GNB.DoubleDown, GNB.FatedCircle, UTL.Cycle, GNB.ReignOfBeasts])]
     [SectionCombo("Alternative Playstyle")]

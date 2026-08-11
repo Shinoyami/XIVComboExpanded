@@ -280,6 +280,23 @@ internal class GunbreakerBowShockSonicBreak : CustomCombo
     }
 }
 
+internal class GunbreakerBowShockDangerZone : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GunbreakerBowShockDangerZoneFeature;
+
+    protected override ComboAction Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        if (actionID == GNB.BowShock && level >= GNB.Levels.DangerZone)
+        {
+            var dangerZone = OriginalHook(GNB.DangerZone);
+            if (IsCooldownUsable(GNB.DangerZone) && CanUseAction(dangerZone))
+                return dangerZone;
+        }
+
+        return actionID;
+    }
+}
+
 internal class GunbreakerDemonSlaughter : CustomCombo
 {
     protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.GunbreakerDemonSlaughterCombo;
