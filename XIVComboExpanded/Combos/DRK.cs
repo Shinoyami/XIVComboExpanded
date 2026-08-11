@@ -87,6 +87,16 @@ internal class DarkSouleater : CustomCombo
     {
         if (actionID == DRK.Souleater)
         {
+            if (IsEnabled(CustomComboPreset.DarkSouleaterEdgeFeature) &&
+                level >= DRK.Levels.EdgeOfDarkness &&
+                InCombat() &&
+                LocalPlayer!.CurrentMp > 7000)
+            {
+                var edge = OriginalHook(DRK.EdgeOfDarkness);
+                if (CanUseAction(edge))
+                    return edge;
+            }
+
             var gauge = GetJobGauge<DRKGauge>();
 
             if (IsEnabled(CustomComboPreset.DarkDeliriumFeature))

@@ -710,6 +710,13 @@ public enum CustomComboPreset
     DarkSouleaterCombo = 3201,
 
     [SectionCombo("Single Target")]
+    [IconsCombo([DRK.Souleater, UTL.ArrowLeft, DRK.EdgeOfDarkness])]
+    [ParentCombo(DarkSouleaterCombo)]
+    [AccessibilityCustomCombo]
+    [CustomComboInfo("Souleater Edge Feature", "Replace the Souleater combo with Edge of Darkness or Edge of Shadow while in combat and above 7000 MP, when the level-appropriate action is usable.", DRK.JobID)]
+    DarkSouleaterEdgeFeature = 3214,
+
+    [SectionCombo("Single Target")]
     [IconsCombo([DRK.Souleater, UTL.ArrowLeft, DRK.Bloodspiller, UTL.Blank, UTL.Danger])]
     [ParentCombo(DarkSouleaterCombo)]
     [ExpandedCustomCombo]
