@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Dalamud.NET.Sdk/15.0.0">
   <PropertyGroup>
-    <Authors>attick, daemitus, Khayle</Authors>
+    <Authors>attick, daemitus, Khayle, Shinoyami</Authors>
     <Company>-</Company>
-    <Version>2.0.6.4</Version>
-    <Description>This plugin condenses combos and mutually exclusive abilities onto a single button.</Description>
+    <Version>2.0.6.5</Version>
+    <Description>Alternative XIV Combo Expanded build with additional job options.</Description>
     <Copyright>Copyleft attick 2020 baybeeee</Copyright>
-    <PackageProjectUrl>https://github.com/daemitus/XIVComboPlugin</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Shinoyami/XIVComboExpanded</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup>

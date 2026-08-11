@@ -60,7 +60,7 @@ public sealed class XIVComboExpandedPlugin : IDalamudPlugin
         });
     }
 
-    public string Name => "XIV Combo Expanded";
+    public string Name => "XIV Combo Expanded - Alt version";
 
     /// <inheritdoc/>
     public void Dispose()
