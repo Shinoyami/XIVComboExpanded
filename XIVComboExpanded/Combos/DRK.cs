@@ -113,7 +113,7 @@ internal class DarkSouleater : CustomCombo
             if (IsEnabled(CustomComboPreset.DarkSouleaterEdgeFeature) &&
                 level >= DRK.Levels.EdgeOfDarkness &&
                 InCombat() &&
-                LocalPlayer!.CurrentMp > 7000)
+                LocalPlayer!.CurrentMp >= 8900)
             {
                 var edge = OriginalHook(DRK.EdgeOfDarkness);
                 if (CanUseAction(edge))
