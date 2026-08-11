@@ -716,6 +716,12 @@ public enum CustomComboPreset
     [CustomComboInfo("Souleater Edge Feature", "Replace the Souleater combo with Edge of Darkness or Edge of Shadow while in combat and above 7000 MP, when the level-appropriate action is usable.", DRK.JobID)]
     DarkSouleaterEdgeFeature = 3214,
 
+    [SectionCombo("Defensive")]
+    [IconsCombo([DRK.TheBlackestNight, UTL.ArrowLeft, DRK.Oblation])]
+    [AccessibilityCustomCombo]
+    [CustomComboInfo("Blackest Night into Oblation", "Replace The Blackest Night with Oblation for 6 seconds after The Blackest Night is used, while Oblation is available.", DRK.JobID)]
+    DarkBlackestNightOblationFeature = 3215,
+
     [SectionCombo("Single Target")]
     [IconsCombo([DRK.Souleater, UTL.ArrowLeft, DRK.Bloodspiller, UTL.Blank, UTL.Danger])]
     [ParentCombo(DarkSouleaterCombo)]

@@ -18,12 +18,14 @@ internal static class DRK
         CarveAndSpit = 3643,
         Quietus = 7391,
         Bloodspiller = 7392,
+        TheBlackestNight = 7393,
         FloodOfDarkness = 16466,
         EdgeOfDarkness = 16467,
         StalwartSoul = 16468,
         FloodOfShadow = 16469,
         EdgeOfShadow = 16470,
         LivingShadow = 16472,
+        Oblation = 25754,
         SaltAndDarkness = 25755,
         Shadowbringer = 25757,
         GritRemoval = 32067,
@@ -67,8 +69,10 @@ internal static class DRK
             Bloodspiller = 62,
             Quietus = 64,
             Delirium = 68,
+            TheBlackestNight = 70,
             Shadow = 74,
             LivingShadow = 80,
+            Oblation = 82,
             SaltAndDarkness = 86,
             Shadowbringer = 90,
             ScarletDelirium = 96,
@@ -76,6 +80,25 @@ internal static class DRK
             Torcleaver = 96,
             Impalement = 96,
             Disesteem = 100;
+    }
+}
+
+internal class DarkBlackestNightOblation : CustomCombo
+{
+    protected internal override CustomComboPreset Preset { get; } = CustomComboPreset.DarkBlackestNightOblationFeature;
+
+    protected override ComboAction Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
+    {
+        if (actionID == DRK.TheBlackestNight && level >= DRK.Levels.Oblation)
+        {
+            var blackestNightCooldown = GetCooldown(DRK.TheBlackestNight);
+            if (blackestNightCooldown.IsCooldown &&
+                blackestNightCooldown.CooldownElapsed <= 6 &&
+                IsCooldownUsable(DRK.Oblation))
+                return DRK.Oblation;
+        }
+
+        return actionID;
     }
 }
 
