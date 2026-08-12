@@ -261,13 +261,6 @@ internal abstract partial class CustomCombo
         => Service.Condition[ConditionFlag.InCombat];
 
     /// <summary>
-    /// Checks combat state using both Dalamud's condition and the player object's status flags.
-    /// </summary>
-    /// <returns>True only when both combat-state sources report combat.</returns>
-    protected static bool PlayerIsInCombat()
-        => InCombat() && LocalPlayer?.StatusFlags.HasFlag(StatusFlags.InCombat) == true;
-
-    /// <summary>
     /// Find if the player has a target.
     /// </summary>
     /// <returns>A value indicating whether the player has a target.</returns>
