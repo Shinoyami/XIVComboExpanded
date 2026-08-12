@@ -130,7 +130,7 @@ internal class SageDosis : CustomCombo
                 CanUseAction(ADV.LucidDreaming))
                 return ADV.LucidDreaming;
 
-            if (IsEnabled(CustomComboPreset.SageDoTFeature) && TargetIsEnemy() && InCombat())
+            if (IsEnabled(CustomComboPreset.SageDoTFeature) && TargetIsEnemy() && PlayerIsInCombat())
             {
                 var eurkasiandosis = FindTargetEffect(SGE.Debuffs.EukrasianDosis);
                 var eurkasiandosis2 = FindTargetEffect(SGE.Debuffs.EukrasianDosis2);
@@ -147,11 +147,11 @@ internal class SageDosis : CustomCombo
 
             if (IsEnabled(CustomComboPreset.SageDosisPsyche))
             {
-                if (level >= SGE.Levels.Psyche && IsCooldownUsable(SGE.Psyche) && TargetIsEnemy() && InCombat())
+                if (level >= SGE.Levels.Psyche && IsCooldownUsable(SGE.Psyche) && TargetIsEnemy() && PlayerIsInCombat())
                     return OriginalHook(SGE.Psyche);
             }
 
-            if (IsEnabled(CustomComboPreset.SageDosisPhlegmaBurst) && TargetIsEnemy() && InCombat())
+            if (IsEnabled(CustomComboPreset.SageDosisPhlegmaBurst) && TargetIsEnemy() && PlayerIsInCombat())
             {
                 var phlegma =
                     level >= SGE.Levels.Phlegma3 ? SGE.Phlegma3 :
