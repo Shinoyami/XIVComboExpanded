@@ -239,6 +239,13 @@ internal abstract partial class CustomCombo
     protected static bool CanUseAction(uint actionID, uint targetID) => Service.IconReplacer.CanUseAction(actionID, targetID);
 
     /// <summary>
+    /// Gets whether the current target is within the action's native range constraints.
+    /// </summary>
+    /// <param name="actionID">Action ID.</param>
+    /// <returns>True when the current target is in range.</returns>
+    protected static bool IsActionTargetInRange(uint actionID) => Service.IconReplacer.IsActionTargetInRange(actionID);
+
+    /// <summary>
     /// Find if the player has a certain condition.
     /// </summary>
     /// <param name="flag">Condition flag.</param>

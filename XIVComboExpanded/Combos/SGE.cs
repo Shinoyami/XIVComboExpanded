@@ -158,11 +158,10 @@ internal class SageDosis : CustomCombo
                 var spendToAvoidOvercap = !burstPhaseActive &&
                     GetRemainingCharges(phlegma) >= 2 &&
                     (!nextBurstIn.HasValue || nextBurstIn.Value.TotalSeconds > 20);
-                var canUsePhlegmaOnTarget = phlegma != 0 &&
-                    CanUseAction(phlegma, CurrentTarget!.EntityId);
+                var inPhlegmaRange = phlegma != 0 && IsActionTargetInRange(phlegma);
 
                 if (phlegma != 0 && IsCooldownUsable(phlegma) &&
-                    canUsePhlegmaOnTarget && (burstPhaseActive || spendToAvoidOvercap))
+                    inPhlegmaRange && (burstPhaseActive || spendToAvoidOvercap))
                     return OriginalHook(SGE.Phlegma);
             }
 

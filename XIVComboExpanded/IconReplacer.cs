@@ -101,6 +101,16 @@ internal sealed partial class IconReplacer : IDisposable
         return clientStructActionManager->GetActionStatus(ActionType.Action, actionID, targetID, false, true) == 0;
     }
 
+    /// <summary>
+    /// Gets whether the current target satisfies an action's native range constraints.
+    /// </summary>
+    /// <param name="actionID">Action ID.</param>
+    /// <returns>True when the action's current target is in range.</returns>
+    internal unsafe bool IsActionTargetInRange(uint actionID)
+    {
+        return clientStructActionManager->IsActionTargetInRange(ActionType.Action, actionID);
+    }
+
     private static bool IsDescendant(Type clazz, Type ancestor)
     {
         if (clazz.BaseType == null) return false;
