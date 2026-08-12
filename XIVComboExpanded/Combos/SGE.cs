@@ -130,6 +130,21 @@ internal class SageDosis : CustomCombo
                 CanUseAction(ADV.LucidDreaming))
                 return ADV.LucidDreaming;
 
+            if (IsEnabled(CustomComboPreset.SageDoTFeature) && TargetIsEnemy() && InCombat())
+            {
+                var eurkasiandosis = FindTargetEffect(SGE.Debuffs.EukrasianDosis);
+                var eurkasiandosis2 = FindTargetEffect(SGE.Debuffs.EukrasianDosis2);
+                var eurkasiandosis3 = FindTargetEffect(SGE.Debuffs.EukrasianDosis3);
+
+                if (HasEffect(SGE.Buffs.Eukrasia))
+                    return OriginalHook(SGE.Dosis);
+
+                // have to explicitly check all variants of the dot for some reason else spaghetti code ensues
+                if (!(eurkasiandosis?.RemainingTime > 2.8 || eurkasiandosis2?.RemainingTime > 2.8 ||
+                    eurkasiandosis3?.RemainingTime > 2.8))
+                    return SGE.Eukrasia;
+            }
+
             if (IsEnabled(CustomComboPreset.SageDosisPsyche))
             {
                 if (level >= SGE.Levels.Psyche && IsCooldownUsable(SGE.Psyche) && TargetIsEnemy() && InCombat())
@@ -165,21 +180,6 @@ internal class SageDosis : CustomCombo
                 if (phlegma != 0 && IsCooldownUsable(phlegma) &&
                     inPhlegmaRange && (burstPhaseActive || spendToAvoidOvercap))
                     return OriginalHook(SGE.Phlegma);
-            }
-
-            if (IsEnabled(CustomComboPreset.SageDoTFeature) && TargetIsEnemy() && InCombat())
-            {
-                var eurkasiandosis = FindTargetEffect(SGE.Debuffs.EukrasianDosis);
-                var eurkasiandosis2 = FindTargetEffect(SGE.Debuffs.EukrasianDosis2);
-                var eurkasiandosis3 = FindTargetEffect(SGE.Debuffs.EukrasianDosis3);
-
-                if (HasEffect(SGE.Buffs.Eukrasia))
-                    return OriginalHook(SGE.Dosis);
-
-                // have to explicitly check all variants of the dot for some reason else spaghetti code ensues
-                if (!(eurkasiandosis?.RemainingTime > 2.8 || eurkasiandosis2?.RemainingTime > 2.8 ||
-                    eurkasiandosis3?.RemainingTime > 2.8))
-                    return SGE.Eukrasia;
             }
 
             if (IsEnabled(CustomComboPreset.SageDosisKardiaFeature))
